@@ -1,0 +1,39 @@
+*{
+    font-family: Arial,'Arial-Narrow';
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    margin: 8% 8%;
+    flex-direction: column;
+}
+ul{
+    margin: 10px;
+}
+input{
+    border: none;
+    border-bottom: 2px solid #ddd;
+    color: black;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 0.5em 1em 0.5em 0;
+    width: 200px;
+}
+label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+}
+#submit{
+    border: none;
+    color: #ddd;
+    margin-left: 25%;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 8%;
+    background-color: blue;
+}

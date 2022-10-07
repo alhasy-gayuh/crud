@@ -20,6 +20,7 @@
             exit;
         }
     }
+    $error = true;
 }
 ?>
 
@@ -49,6 +50,10 @@
 </head>
 <body>
     <h1>Halaman Login</h1>
+    
+    <?php if(isset($error)) : ?>
+        <p style="color: red; font-style:italic;">Username / password Salah!</p>
+    <?php endif ?>
 
     <form action="" method="post">
         <ul>

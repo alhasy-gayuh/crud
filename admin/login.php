@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+if(isset($_SESSION["login"])){
+    header("Location: index.php");
+    exit;
+}
+
     require '../koneksi.php';
 
     if( isset ($_POST["login"]) ){
@@ -14,10 +22,15 @@
         // cek password
         $row = mysqli_fetch_assoc($result);
 
-        /// password_verify >> mengecek password_hash
+        // password_verify >> mengecek password_hash
         if( password_verify($password, $row["password"]) ){
+            
+            // membuat session untuk login
+            $_SESSION["login"] = true;
+            
             header("Location: index.php");
             exit;
+        
         }
     }
     $error = true;

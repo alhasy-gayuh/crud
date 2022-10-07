@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
 require('../koneksi.php');
 $result = query("SELECT * FROM data_alumni");
 
@@ -36,6 +43,7 @@ if( isset($_POST["cari"]) ){
     <title>Data Alumni</title>
 </head>
 <body>
+    <a href="logout.php">Logout</a>
     <h1>Daftar Nama Alumni PMII Jombang</h1>
     <form action="" method="post">
         <input type="text" name="keyword" size="40px" placeholder="Cari Nama Alumni" autocomplete="off">

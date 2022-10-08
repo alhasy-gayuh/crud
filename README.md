@@ -23,4 +23,4 @@ jika session hanya berlaku untuk satu kali sesi saja, dan akan berakhir ketika b
 
 # PAGINATION
 adalah sebuah teknik untuk membatasi data yang di tampilkan menjadi beberapa bagian.
-dalam melakukan pagination sebenernya sangatlah sederhana yaitu dengan menggunakan <LIMIT> pada syntax mysql.
+dalam melakukan pagination sebenernya sangatlah sederhana yaitu dengan menggunakan <LIMIT> pada syntax mysql contoh: <"SELECT * FROM data_alumni LIMIT <isi mau dimulai dari index ke berapa>,<isi dengan berapa banyak data akan di tampilkan>">

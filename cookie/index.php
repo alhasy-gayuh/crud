@@ -7,6 +7,9 @@ if (!isset($_SESSION["login"])) {
 }
 
 require('../koneksi.php');
+
+// pagination
+
 $result = query("SELECT * FROM data_alumni");
 
 // tombol cari di klik

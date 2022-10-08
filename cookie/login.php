@@ -2,18 +2,28 @@
 
 session_start();
 
-if (isset($_COOKIE["login"])) {
-    if ($_COOKIE["login"] == 'true') {
-        $_SESSION["login"] = true;
+require '../koneksi.php';
+
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+    $key = $_COOKIE['key'];
+    $id = $_COOKIE['id'];
+
+    // mengambil cookie dari tabel user berdasarkan id
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE id = $id");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie
+    if($key === hash('sha256', $row['username'])){
+        $_SESSION['login'] = true;
     }
 }
 
+// session login
 if (isset($_SESSION["login"])) {
     header("Location: index.php");
     exit;
 }
 
-require '../koneksi.php';
 
 if (isset($_POST["login"])) {
 
@@ -36,11 +46,14 @@ if (isset($_POST["login"])) {
 
             //Menggunakan Cokiee
             if (isset($_POST["remember"])) {
-                setcookie("login", 'true', time() + 100);
+                
+                setcookie('id', $row['id'], time() + 100);
+                setcookie('key', hash('sha256',$row["username"]), time()+100);
+
             
+            }
             header("Location: index.php");
             exit;
-            }
         }
     }
     $error = true;

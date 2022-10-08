@@ -20,3 +20,7 @@ contoh penggunaan cookie: setcookie('keynya_apa','value_apa')
 
 # Perbedaan Cookie dengan Session;
 jika session hanya berlaku untuk satu kali sesi saja, dan akan berakhir ketika browsernya di close atau pc nya di matikan. sedangkan cookie akhir dari sesinya dapat di tentukan secara manual dengan hitungan "s" atau Detik.
+
+# PAGINATION
+adalah sebuah teknik untuk membatasi data yang di tampilkan menjadi beberapa bagian.
+dalam melakukan pagination sebenernya sangatlah sederhana yaitu dengan menggunakan <LIMIT> pada syntax mysql.
